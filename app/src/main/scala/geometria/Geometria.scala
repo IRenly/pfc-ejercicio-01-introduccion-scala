@@ -22,7 +22,12 @@ class Geometria {
    * distancia(1, 1, 1, 1) == 0.0
    */
   def distancia(x1: Double, y1: Double, x2: Double, y2: Double): Double = {
-    ???
+    val x2x1= x2-x1
+    val px2x1= x2x1 * x2x1
+    val y2y1= y2-y1
+    val py2y1= y2y1 * y2y1
+    val resultado = math.sqrt(px2x1 + py2y1)
+    resultado
   }
 
   /**
@@ -38,7 +43,6 @@ class Geometria {
                 cx: Double, cy: Double): Double = {
     ???
   }
-
   /**
    * Punto 3: área del triángulo por la fórmula de Herón.
    *
