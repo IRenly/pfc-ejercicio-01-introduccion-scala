@@ -92,6 +92,15 @@ class Geometria {
   def clasificar(ax: Double, ay: Double,
                  bx: Double, by: Double,
                  cx: Double, cy: Double): String = {
-    ???
+    val a = distancia(ax, ay, bx, by)
+    val b = distancia(bx, by, cx, cy)
+    val c = distancia(cx, cy, ax, ay)
+    val epsilon = 1e-6
+    val ab = math.abs(a - b) < epsilon
+    val bc = math.abs(b - c) < epsilon
+    val ca = math.abs(c - a) < epsilon
+    if (ab && bc) "equilatero"
+    else if (ab || bc || ca) "isosceles"
+    else "escaleno"
   }
 }
