@@ -66,7 +66,13 @@ class Geometria {
   def area(ax: Double, ay: Double,
            bx: Double, by: Double,
            cx: Double, cy: Double): Double = {
-    ???
+    val a = distancia(ax, ay, bx, by)
+    val b = distancia(bx, by, cx, cy)
+    val c= distancia(cx, cy, ax, ay)
+    val s = (a + b + c)/2
+    val area = math.sqrt(s*(s - a) * (s - b) * (s - c))
+    require(area> 0,   "los 3 puntos ingresados no forman un triangulo")
+    area
   }
 
   /**
