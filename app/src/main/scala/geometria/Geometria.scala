@@ -41,7 +41,12 @@ class Geometria {
   def perimetro(ax: Double, ay: Double,
                 bx: Double, by: Double,
                 cx: Double, cy: Double): Double = {
-    ???
+    val r1= distancia(ax, ay, bx, by)
+    val r2= distancia(bx, by, cx, cy)
+    val r3= distancia(cx, cy, ax, ay)
+
+    val perimetroresultante= r1 + r2 + r3
+    perimetroresultante
   }
   /**
    * Punto 3: área del triángulo por la fórmula de Herón.
